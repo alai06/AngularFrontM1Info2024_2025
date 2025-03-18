@@ -30,7 +30,7 @@
     </button> 
 </form>
 
-<ul>
+<!-- <ul>
     @for(assignment of assignments; track assignment.name) {
         @if(assignment.submitted) {
         <li appSubmitted>
@@ -44,7 +44,8 @@
         </li>
         }
     }
-</ul>
+</ul> -->
+
 
 <table>
     <thead>
@@ -64,3 +65,22 @@
         }
     </tbody>
 </table>
+
+<mat-list>
+    @for(assignment of assignments; track assignment.name) {
+    <h3 mat-subheader>{{assignment.dueDate | date}}</h3>
+    <mat-list-item (click)="assignmentClique(assignment)">
+        @if(assignment.submitted) {
+          <p appRendu>
+            The assignement : {{assignment.name}} has been submitted in time!
+          </p>
+        } @else {
+            <p>{{assignment.name}} is not submitted yet!</p>
+        }
+    
+    </mat-list-item>
+    <mat-divider></mat-divider>
+}
+
+</mat-list>
+<app-assignment-detail></app-assignment-detail>
