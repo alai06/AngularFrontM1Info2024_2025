@@ -78,9 +78,11 @@
             <p>{{assignment.name}} is not submitted yet!</p>
         }
     
-    </mat-list-item>
+    
     <mat-divider></mat-divider>
+</mat-list-item>
 }
 
 </mat-list>
-<app-assignment-detail></app-assignment-detail>
+<app-assignment-detail [assignementTransmis]="assignementSelectionne">
+</app-assignment-detail>

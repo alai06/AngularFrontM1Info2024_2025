@@ -57,7 +57,7 @@ export class AssignmentsComponent {
   }
   assignmentClique(assignment:Assignment) {
    this.assignementSelectionne = assignment;
- }
+  }
 
   addAssignment() {
     console.log("New assignment added : ", this.assignmentName);
